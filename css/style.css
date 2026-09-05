@@ -1,0 +1,140 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  background-image: url(img/background.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #17372e;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  padding: 24px;
+}
+
+#list-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+}
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+h1 {
+  margin-bottom: 20px;
+  padding: 18px 24px;
+  border-radius: 22px;
+  background-color: rgb(117, 176, 34);
+}
+
+#task {
+  flex: 1;
+  min-width: 0;
+  height: 44px;
+  padding: 0 15px;
+  border: 1px solid #d7ddd8;
+  border-radius: 22px 0 0 22px;
+  background: white;
+  font-family: inherit;
+}
+
+#submit-task,
+#delete {
+  border: 0;
+  background: #17372e;
+  color: white;
+  font-family: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#submit-task {
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 0 22px 22px 0;
+}
+
+#delete {
+  height: 35px;
+  margin-top: 5px;
+  padding: 0 22px;
+  border-radius: 22px;
+  font-size: 0.8rem;
+}
+
+#submit-task:hover,
+#delete:hover {
+  opacity: 0.9;
+}
+
+p {
+  width: 100%;
+  margin: 8px 0 0;
+  padding: 10px;
+  border-radius: 20px;
+  background: beige;
+  color: #17372e;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.linethrough {
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+/******************************************
+/* MOBILE
+/*******************************************/
+
+@media (max-width: 500px) {
+  #container {
+    justify-content: flex-start;
+    padding: 40px 18px 24px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  #task,
+  #submit-task {
+    width: 100%;
+    flex: none;
+    border-radius: 22px;
+  }
+
+  #submit-task {
+    margin-top: 10px;
+  }
+
+  #delete {
+    width: 100%;
+  }
+}
